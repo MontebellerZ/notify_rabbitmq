@@ -7,6 +7,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.post("/notificar", (req, res) => {
+    console.log(req.body);
+
     const message = req.body?.message;
 
     if (!message) return res.status(400).send("Nenhuma mensagem foi definida para envio");
@@ -18,7 +20,7 @@ app.post("/notificar", (req, res) => {
             con.createChannel((err, channel) => {
                 if (err) throw err;
 
-                const queue = "hello";
+                const queue = "notify_rabbitmq";
 
                 channel.assertQueue(queue, { durable: false });
 

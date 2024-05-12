@@ -8,7 +8,7 @@ async function main() {
             await con.createChannel(async (err, channel) => {
                 if (err) throw err;
 
-                const queue = "hello";
+                const queue = "notify_rabbitmq";
 
                 await channel.assertQueue(queue, { durable: false });
 
