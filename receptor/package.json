@@ -1,0 +1,14 @@
+{
+  "name": "receptor",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "ndm": "nodemon index.js"
+  },
+  "dependencies": {
+    "amqplib": "^0.10.4",
+    "nodemon": "^3.1.0"
+  }
+}
